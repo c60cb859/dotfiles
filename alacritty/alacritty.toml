@@ -1,26 +1,26 @@
 [colors.bright]
-black = "{{ colors.grey }}"
-blue = "{{ colors.blue }}"
-cyan = "{{ colors.cyan }}"
-green = "{{ colors.green }}"
-magenta = "{{ colors.purple }}"
-red = "{{ colors.red }}"
-white = "{{ colors.white }}"
-yellow = "{{ colors.orange }}"
+black = "#{{ colors.grey }}"
+blue = "#{{ colors.blue }}"
+cyan = "#{{ colors.cyan }}"
+green = "#{{ colors.green }}"
+magenta = "#{{ colors.purple }}"
+red = "#{{ colors.red }}"
+white = "#{{ colors.white }}"
+yellow = "#{{ colors.orange }}"
 
 [colors.normal]
-black = "{{ colors.black }}"
-blue = "{{ colors.blue }}"
-cyan = "{{ colors.cyan }}"
-green = "{{ colors.green }}"
-magenta = "{{ colors.purple }}"
-red = "{{ colors.red }}"
-white = "{{ colors.white }}"
-yellow = "{{ colors.orange }}"
+black = "#{{ colors.black }}"
+blue = "#{{ colors.blue }}"
+cyan = "#{{ colors.cyan }}"
+green = "#{{ colors.green }}"
+magenta = "#{{ colors.purple }}"
+red = "#{{ colors.red }}"
+white = "#{{ colors.white }}"
+yellow = "#{{ colors.orange }}"
 
 [colors.primary]
-background = "{{ colors.black }}"
-foreground = "{{ colors.white }}"
+background = "#{{ colors.black }}"
+foreground = "#{{ colors.white }}"
 
 
 [env]

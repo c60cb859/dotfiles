@@ -3,3 +3,6 @@ depends = ["graphics"]
 
 [alacritty.files]
 "alacritty" = "~/.config/alacritty"
+
+[bat.files]
+"bat" = "~/.config/bat/config"
