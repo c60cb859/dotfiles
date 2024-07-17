@@ -8,7 +8,7 @@ depends = ["graphics"]
 "bat" = "~/.config/bat/config"
 
 [nvim.files]
-"nvim" = "~/.config/nvim"
+"nvim/" = { target = "~/.config/nvim/", type = "symbolic" }
 
 [tig.files]
 "tig" = "~/.config/tig/config"
