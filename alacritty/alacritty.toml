@@ -1,0 +1,59 @@
+[colors.bright]
+black = "{{ colors.grey }}"
+blue = "{{ colors.blue }}"
+cyan = "{{ colors.cyan }}"
+green = "{{ colors.green }}"
+magenta = "{{ colors.purple }}"
+red = "{{ colors.red }}"
+white = "{{ colors.white }}"
+yellow = "{{ colors.orange }}"
+
+[colors.normal]
+black = "{{ colors.black }}"
+blue = "{{ colors.blue }}"
+cyan = "{{ colors.cyan }}"
+green = "{{ colors.green }}"
+magenta = "{{ colors.purple }}"
+red = "{{ colors.red }}"
+white = "{{ colors.white }}"
+yellow = "{{ colors.orange }}"
+
+[colors.primary]
+background = "{{ colors.black }}"
+foreground = "{{ colors.white }}"
+
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = {{ font_size }}
+
+[font.bold]
+family = "{{ font_family }}"
+style = "Bold"
+
+[font.bold_italic]
+family = "{{ font_family }}"
+style = "Bold Italic"
+
+[font.italic]
+family = "{{ font_family }}"
+style = "Italic"
+
+[font.normal]
+family = "{{ font_family }}"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
+[window]
+decorations = "full"
