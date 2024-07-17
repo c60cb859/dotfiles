@@ -2,13 +2,13 @@
 depends = ["graphics"]
 
 [alacritty.files]
-"alacritty" = "~/.config/alacritty"
+"alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
 [bat.files]
 "bat" = "~/.config/bat/config"
 
 [nvim.files]
-"nvim/" = { target = "~/.config/nvim/", type = "symbolic" }
+nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
 [tig.files]
 "tig" = "~/.config/tig/config"
