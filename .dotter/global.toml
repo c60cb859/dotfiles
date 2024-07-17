@@ -6,3 +6,6 @@ depends = ["graphics"]
 
 [bat.files]
 "bat" = "~/.config/bat/config"
+
+[tig.files]
+"tig" = "~/.config/tig/config"
