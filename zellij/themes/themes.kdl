@@ -1,0 +1,15 @@
+themes {
+    onedark {
+        bg "#{{ colors.black }}"
+        fg "#{{ colors.white }}"
+        black "#{{ colors.black }}"
+        green "#{{ colors.green }}"
+        red "#{{ colors.red }}"
+        yellow "#{{ colors.yellow }}"
+        blue "#{{ colors.blue }}"
+        magenta "#{{ colors.purple }}"
+        cyan "#{{ colors.cyan }}"
+        white "#{{ colors.white }}"
+        orange "#{{ colors.orange }}"
+    }
+}

@@ -9,3 +9,9 @@ depends = ["graphics"]
 
 [tig.files]
 "tig" = "~/.config/tig/config"
+
+[zellij]
+depends = ["graphics"]
+
+[zellij.files]
+"zellij" = "~/.config/zellij"
