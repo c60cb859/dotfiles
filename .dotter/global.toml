@@ -10,6 +10,9 @@ depends = ["graphics"]
 [tig.files]
 "tig" = "~/.config/tig/config"
 
+[zsh.files]
+"zshrc" = "~/.zshrc.local"
+
 [zellij]
 depends = ["graphics"]
 
