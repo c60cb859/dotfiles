@@ -4,12 +4,17 @@ depends = ["graphics"]
 [alacritty.files]
 "alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
+[alacritty.variables]
+packages = ["alacritty"]
+
 [bat.files]
 "bat" = "~/.config/bat/config"
 
+[bat.variables]
+packages = ["bat"]
+
 [cargo.files]
 "cargo.toml" = "~/.cargo/config.toml"
-"install.sh" = ".setup/cargo"
 
 [cargo.variables]
 packages = ["lld", "clang"]
@@ -17,17 +22,29 @@ packages = ["lld", "clang"]
 [nvim.files]
 nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
+[nvim.variables]
+packages = ["neovim", "fzf", "powerline-fonts"]
+
 [tig.files]
 "tig" = "~/.config/tig/config"
 
+[tig.variables]
+packages = ["tig"]
+
 [zsh.files]
 "zshrc" = "~/.zshrc.local"
+
+[zsh.variables]
+packages = ["zsh", "grml-zsh-config", "fzf", "ripgrep", "bat"]
 
 [zellij]
 depends = ["graphics"]
 
 [zellij.files]
 "zellij" = "~/.config/zellij"
+
+[zellij.variables]
+packages = ["zellij"]
 
 [pacman.files]
 pacman = { target = "/etc/pacman.conf", type = "template", owner = "root" }
