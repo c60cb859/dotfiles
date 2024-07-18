@@ -2,40 +2,28 @@
 depends = ["graphics"]
 
 [alacritty.files]
-"alacritty.toml" = "~/.config/alacritty/alacritty.toml"
-
-[alacritty.variables]
-packages = ["alacritty"]
+"configs/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
 [bat.files]
-"bat" = "~/.config/bat/config"
+"configs/bat" = "~/.config/bat/config"
 
-[bat.variables]
-packages = ["bat"]
+[secureboot.files]
+"setup/secure-boot/80-secureboot.hook" = { target = "/etc/pacman.d/hooks/80-secureboot.hook", type = "template", owner = "root" }
+
+[bin.files]
+bin = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
 [cargo.files]
-"cargo.toml" = "~/.cargo/config.toml"
-
-[cargo.variables]
-packages = ["lld", "clang"]
+"configs/cargo.toml" = "~/.cargo/config.toml"
 
 [nvim.files]
 nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
-[nvim.variables]
-packages = ["neovim", "fzf", "powerline-fonts"]
-
 [tig.files]
-"tig" = "~/.config/tig/config"
-
-[tig.variables]
-packages = ["tig"]
+"configs/tig" = "~/.config/tig/config"
 
 [zsh.files]
-"zshrc" = "~/.zshrc.local"
-
-[zsh.variables]
-packages = ["zsh", "grml-zsh-config", "fzf", "ripgrep", "bat"]
+"configs/zshrc" = "~/.zshrc.local"
 
 [zellij]
 depends = ["graphics"]
@@ -43,11 +31,8 @@ depends = ["graphics"]
 [zellij.files]
 "zellij" = "~/.config/zellij"
 
-[zellij.variables]
-packages = ["zellij"]
-
 [pacman.files]
-pacman = { target = "/etc/pacman.conf", type = "template", owner = "root" }
+"configs/pacman" = { target = "/etc/pacman.conf", type = "template", owner = "root" }
 
 [makepkg.files]
-makepkg = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
+"configs/makepkg" = { target = "/etc/makepkg.conf", type = "template", owner = "root" }

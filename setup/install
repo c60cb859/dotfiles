@@ -1,0 +1,44 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# Check if the input argument is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <system type>"
+    exit 1
+fi
+
+system=$1
+
+echo -e "${GREEN}>>> Installing paru for AUR${NC}"
+sudo pacman -S --needed base-devel
+cd /tmp || exit
+git clone https://aur.archlinux.org/paru.git
+cd paru || exit
+makepkg -si
+
+
+echo -e "${GREEN}>>> Installing Basic packages${NC}"
+sudo pacman -S --noconfirm --needed \
+  zsh \
+  fzf \
+  bat \
+  neovim \
+  powerline-fonts \
+  ripgrep \
+  zellij
+
+echo -e "${GREEN}>>> Installing AUR packages${NC}"
+paru -S --noconfirm --needed \
+  dotter
+
+echo -e "${GREEN}>>> Installing packages for $system ${NC}"
+case $system in
+    xtop)
+        sudo pacman -S --noconfirm --needed alacritty
+        ;;
+    *)
+        echo "Invalid input"
+        ;;
+esac

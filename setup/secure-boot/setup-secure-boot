@@ -1,0 +1,32 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}>>> Installing packages${NC}"
+sudo pacman -S --noconfirm --needed sbctl efitools
+
+echo -e "${GREEN}>>> Backup current variables${NC}"
+for var in PK KEK db dbx ; do
+  efi-readvar -v $var -o old_${var}.esl;
+done
+
+echo -e "${GREEN}>>> Status${NC}"
+sudo sbctl status
+
+echo -e "${GREEN}>>> Create keys${NC}"
+sudo sbctl create-keys
+
+echo -e "${GREEN}>>> Enroll keys${NC}"
+sudo sbctl enroll-keys -m
+
+echo -e "${GREEN}>>> Signing files${NC}"
+sudo sbctl sign -s /efi/EFI/BOOT/BOOTX64.EFI
+sudo sbctl sign -s /efi/EFI/Linux/arch-linux.efi
+sudo sbctl sign -s /efi/EFI/systemd/systemd-bootx64.efi
+
+echo -e "${GREEN}>>> Status${NC}"
+sudo sbctl status
+
+echo -e "${GREEN}>>> Verify${NC}"
+sudo sbctl verify
