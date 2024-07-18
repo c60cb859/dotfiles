@@ -1,0 +1,18 @@
+includes = ["./.dotter/graphics.toml"]
+
+packages = [
+  "alacritty",
+  "bat",
+  "nvim",
+  "cargo",
+  "tig",
+  "zsh",
+  "zellij",
+  "pacman",
+  "makepkg",
+]
+
+[variables]
+font_size = 10
+font_family = "Hack Nerd Font"
+cpu_cores = 8

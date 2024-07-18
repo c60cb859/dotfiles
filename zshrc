@@ -2,7 +2,6 @@
 # Enviroment variables
 #
 path+=($HOME/.local/bin)
-path+=($HOME/.cargo/env)
 path+=($HOME/.cargo/bin)
 path+=($HOME/.cargo/env)
 export path

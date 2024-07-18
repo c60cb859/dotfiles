@@ -7,6 +7,13 @@ depends = ["graphics"]
 [bat.files]
 "bat" = "~/.config/bat/config"
 
+[cargo.files]
+"cargo.toml" = "~/.cargo/config.toml"
+"install.sh" = ".setup/cargo"
+
+[cargo.variables]
+packages = ["lld", "clang"]
+
 [nvim.files]
 nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
@@ -21,3 +28,9 @@ depends = ["graphics"]
 
 [zellij.files]
 "zellij" = "~/.config/zellij"
+
+[pacman.files]
+pacman = { target = "/etc/pacman.conf", type = "template", owner = "root" }
+
+[makepkg.files]
+makepkg = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
