@@ -1,41 +1,28 @@
-[alacritty]
+[base]
 depends = ["graphics"]
 
-[alacritty.files]
-"configs/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+[base.files]
+"base/bat" = "~/.config/bat/config"
+"base/zshrc" = "~/.zshrc.local"
+"base/zellij" = "~/.config/zellij"
+"base/bin" = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
-[bat.files]
-"configs/bat" = "~/.config/bat/config"
+[developer.files]
+"developer/tig" = "~/.config/tig/config"
+"developer/cargo.toml" = "~/.config/cargo/config.toml"
+"developer/nvim" = { target = "~/.config/nvim", type = "symbolic", recurse = false }
+
+[desktop]
+depends = ["graphics"]
+
+[desktop.files]
+"desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+
+[system.files]
+"system/pacman" = { target = "/etc/pacman.conf", type = "template", owner = "root" }
+"system/makepkg" = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
+"system/paru" = { target = "/etc/paru.conf", type = "template", owner = "root" }
 
 [secureboot.files]
 "setup/secure-boot/80-secureboot.hook" = { target = "/etc/pacman.d/hooks/80-secureboot.hook", type = "template", owner = "root" }
 
-[bin.files]
-bin = { target = "~/.local/bin", type = "symbolic", recurse = false }
-
-[cargo.files]
-"configs/cargo.toml" = "~/.config/cargo/config.toml"
-
-[nvim.files]
-nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
-
-[tig.files]
-"configs/tig" = "~/.config/tig/config"
-
-[zsh.files]
-"configs/zshrc" = "~/.zshrc.local"
-
-[zellij]
-depends = ["graphics"]
-
-[zellij.files]
-"zellij" = "~/.config/zellij"
-
-[pacman.files]
-"configs/pacman" = { target = "/etc/pacman.conf", type = "template", owner = "root" }
-
-[makepkg.files]
-"configs/makepkg" = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
-
-[paru.files]
-"configs/paru" = { target = "/etc/paru.conf", type = "template", owner = "root" }

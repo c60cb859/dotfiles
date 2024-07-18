@@ -1,18 +1,9 @@
 includes = ["./.dotter/graphics.toml"]
 
 packages = [
-  "alacritty",
-  "bat",
-  "bin",
-  "secureboot",
-  "nvim",
-  "cargo",
-  "tig",
-  "zsh",
-  "zellij",
-  "pacman",
-  "makepkg",
-  "paru",
+  "base",
+  "developer",
+  "system",
 ]
 
 [variables]
