@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo pacman -S --noconfirm --needed \
+  zsh \
+  fzf \
+  bat \
+  neovim \
+  powerline-fonts \
+  ripgrep \
+  zellij

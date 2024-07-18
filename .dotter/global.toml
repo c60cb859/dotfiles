@@ -14,7 +14,7 @@ depends = ["graphics"]
 bin = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
 [cargo.files]
-"configs/cargo.toml" = "~/.cargo/config.toml"
+"configs/cargo.toml" = "~/.config/cargo/config.toml"
 
 [nvim.files]
 nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
@@ -36,3 +36,6 @@ depends = ["graphics"]
 
 [makepkg.files]
 "configs/makepkg" = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
+
+[paru.files]
+"configs/paru" = { target = "/etc/paru.conf", type = "template", owner = "root" }

@@ -12,6 +12,7 @@ packages = [
   "zellij",
   "pacman",
   "makepkg",
+  "paru",
 ]
 
 [variables]

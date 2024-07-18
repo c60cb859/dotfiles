@@ -17,6 +17,8 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
+export CARGO_HOME=$HOME/.config/cargo
+
 export HISTFILE=$XDG_CACHE_HOME/zsh/history
 export HISTSIZE=5000
 export SAVEHIST=1000
