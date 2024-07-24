@@ -2,8 +2,7 @@
 # Enviroment variables
 #
 path+=($HOME/.local/bin)
-path+=($HOME/.cargo/bin)
-path+=($HOME/.cargo/env)
+path+=($HOME/.config/cargo/bin)
 export path
 
 export BROWSER=firefox
@@ -12,18 +11,23 @@ export EDITOR=nvim
 export VISUAL=nvim
 export COLORTERM=truecolor
 
+# XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
-export CARGO_HOME=$HOME/.config/cargo
+# Ansible
+export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
+
+# Rust/Cargo
+export CARGO_HOME=$XDG_CONFIG_HOME/cargo
+export CARGO_TARGET_DIR=$XDG_CONFIG_HOME/cargo/target
+export CARGO_INSTALL_ROOT=$XDG_CONFIG_HOME/cargo/install
 
 export HISTFILE=$XDG_CACHE_HOME/zsh/history
 export HISTSIZE=5000
 export SAVEHIST=1000
-
-export ESPIDF=/opt/esp-idf
 
 autoload -U compinit; compinit
 

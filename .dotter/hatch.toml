@@ -4,6 +4,7 @@ packages = [
   "base",
   "developer",
   "system",
+  "desktop",
 ]
 
 [variables]

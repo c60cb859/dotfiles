@@ -9,6 +9,7 @@ depends = ["graphics"]
 
 [developer.files]
 "developer/tig" = "~/.config/tig/config"
+"developer/git" = "~/.config/git/config"
 "developer/cargo.toml" = "~/.config/cargo/config.toml"
 "developer/nvim" = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
