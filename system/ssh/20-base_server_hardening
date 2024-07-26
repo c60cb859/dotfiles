@@ -1,42 +1,53 @@
+# Specify the file containing the ED25519 host key
 HostKey /etc/ssh/ssh_host_ed25519_key
+# Specify the file containing the RSA host key
 HostKey /etc/ssh/ssh_host_rsa_key
 
+# Port to listen on for SSH connections
 Port 44322
 
 # Disallow Password authentication
 PasswordAuthentication no
-# Disallow Empty Password
+# Disallow Empty Passwords
 PermitEmptyPasswords no
 # Disallow root login
 PermitRootLogin no
+# Disallow challenge-response authentication
 ChallengeResponseAuthentication no
 
+# Allow only members of the ssh-user group to connect
 AllowGroups ssh-user
 
 # Password based logins are disabled - only public key based logins are allowed.
 AuthenticationMethods publickey
 PubkeyAuthentication yes
 
-# LogLevel VERBOSE logs user's key fingerprint on login. Needed to have a clear audit track of which key was using to log in.
+# LogLevel VERBOSE logs user's key fingerprint on login. Needed to have a clear audit track of which key was used to log in.
 LogLevel VERBOSE
 
 # Log sftp level file access (read/write/etc.) that would not be easily logged otherwise.
 Subsystem sftp  /usr/lib/ssh/sftp-server -f AUTHPRIV -l INFO
 
-# Restrict key exchange, cipher, and MAC algorithms, as per sshaudit.com
-# hardening guide.
+# Restrict key exchange, cipher, and MAC algorithms, as per sshaudit.com hardening guide.
+# Specify allowed Key Exchange (KEX) algorithms
 # KexAlgorithms sntrup761x25519-sha512@openssh.com,gss-curve25519-sha256-,curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,gss-group16-sha512-,diffie-hellman-group16-sha512
 KexAlgorithms curve25519-sha256@libssh.org
 
+# Specify allowed ciphers
 # Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-gcm@openssh.com,aes128-ctr
 Ciphers chacha20-poly1305@openssh.com
 
+# Specify allowed Message Authentication Code (MAC) algorithms
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
 
+# Specify allowed host key algorithms
 HostKeyAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256
 
+# Specify allowed CA signature algorithms
 CASignatureAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256
 
+# Specify allowed host-based accepted algorithms
 HostbasedAcceptedAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256
 
+# Specify allowed public key accepted algorithms
 PubkeyAcceptedAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256
