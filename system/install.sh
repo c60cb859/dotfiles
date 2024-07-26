@@ -21,9 +21,9 @@ else
   git clone https://aur.archlinux.org/paru.git
 
   cd paru || exit
-  export PATH=$PATH:~/.config/cargo/bin
+  PATH=$PATH:~/.config/cargo/bin
 
-  makepkg -si
+  makepkg -sid
   rm -rf /tmp/paru
   sudo pacman -R --noconfirm paru-debug
 fi
