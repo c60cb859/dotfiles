@@ -16,9 +16,14 @@ sudo pacman -S --noconfirm --needed \
   lld \
   clang
 
+
 if command -v rustc >/dev/null 2>&1; then
   rustc --version
 else
+  export CARGO_HOME=~/.config/cargo
+  export CARGO_TARGET_DIR=~/.config/cargo/target
+  export CARGO_INSTALL_ROOT=~/.config/cargo/install
+
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   rustup component add rust-analyzer
   rustup component add clippy

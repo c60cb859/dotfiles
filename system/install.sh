@@ -16,10 +16,16 @@ if command -v paru >/dev/null 2>&1; then
   paru --version
 else
   sudo pacman -S --needed base-devel
+
   cd /tmp || exit
   git clone https://aur.archlinux.org/paru.git
+
   cd paru || exit
+  export PATH=$PATH:~/.config/cargo/bin
+
   makepkg -si
+  rm -rf /tmp/paru
+  sudo pacman -R --noconfirm paru-debug
 fi
 
 paru -S --noconfirm --needed \
