@@ -9,7 +9,7 @@ depends = ["graphics"]
 "base/bin" = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
 [base.variables]
-base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep"]
+base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep", "ttf-hack-nerd"]
 
 [developer.files]
 "developer/install.sh" = { target = "./.install/developer", type = "template" }
@@ -26,6 +26,11 @@ depends = ["graphics"]
 
 [desktop.files]
 "desktop/install.sh" = { target = "./.install/desktop", type = "template" }
+"desktop/gtkrc-2.0" = "~/.config/gtk-2.0/settings.ini"
+"desktop/gtkrc-3.0" = "~/.config/gtk-3.0/settings.ini"
+"desktop/qt6ct" = "~/.config/qt6ct/qt6ct.conf"
+"desktop/qt5ct" = "~/.config/qt5ct/qt5ct.conf"
+"desktop/xsettingsd" = "~/.config/xsettingsd/xsettingsd.conf"
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
 [desktop.variables]

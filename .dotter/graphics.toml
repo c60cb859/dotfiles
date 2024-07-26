@@ -15,3 +15,8 @@ dark_cyan = "2b6f77"
 dark_red = "993939"
 dark_yellow = "93691d"
 dark_purple = "8a3fa0"
+
+[graphics.variables.gtk]
+theme = "Adwaita-Dark"
+icon = "adwaita-dark"
+cursor = "Adwaita"
