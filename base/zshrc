@@ -25,6 +25,12 @@ export CARGO_HOME=$XDG_CONFIG_HOME/cargo
 export CARGO_TARGET_DIR=$XDG_CONFIG_HOME/cargo/target
 export CARGO_INSTALL_ROOT=$XDG_CONFIG_HOME/cargo/install
 
+# qt/gtk
+export QT_QPA_PLATFORMTHEME=qt6ct
+export SAL_USE_VCLPLUGIN=gtk4
+# nwg-look, breeze-gtk
+export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk/gtkrc-2.0
+
 export HISTFILE=$XDG_CACHE_HOME/zsh/history
 export HISTSIZE=5000
 export SAVEHIST=1000

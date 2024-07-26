@@ -1,0 +1,19 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# Directory containing the scripts
+scripts_dir="./.install"
+
+# Iterate over each file in the directory
+for script in "$scripts_dir"/*; do
+    # Check if the file is executable
+    if [[ -x "$script" && -f "$script" ]]; then
+        # Execute the script
+        echo -e "${GREEN}>>> Installing $script... ${NC}"
+        "$script"
+    else
+        echo "$script is not executable or is not a regular file"
+    fi
+done
