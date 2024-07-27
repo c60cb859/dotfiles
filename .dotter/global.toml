@@ -5,27 +5,27 @@
 depends = ["graphics"]
 
 [base.files]
-"base/install.sh" = { target = "./.install/base", type = "template" }
+"base/install.sh" = "./.install/base"
 "base/bat" = "~/.config/bat/config"
+"base/env_vars" = "~/.config/env_vars"
+"base/bashrc" = "~/.bashrc"
+"base/bash_profile" = "~/.bash_profile"
 "base/zshrc" = "~/.zshrc.local"
 "base/zellij" = "~/.config/zellij"
 "base/bin" = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
-[base.variables]
-base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep", "ttf-hack-nerd"]
-
 ###############################################################################
 # Developer
 ###############################################################################
+[developer]
+depends = ["rust"]
+
 [developer.files]
-"developer/install.sh" = { target = "./.install/developer", type = "template" }
+"developer/install.sh" = "./.install/developer"
 "developer/tig" = "~/.config/tig/config"
 "developer/git" = "~/.config/git/config"
 "developer/cargo.toml" = "~/.config/cargo/config.toml"
 "developer/nvim" = { target = "~/.config/nvim", type = "symbolic", recurse = false }
-
-[developer.variables]
-developer_packages = ["tig", "git", "neovim", "powerline-fonts", "unzip", "npm", "python"]
 
 ###############################################################################
 # Desktop
@@ -44,28 +44,19 @@ depends = ["graphics"]
 "desktop/hyprland" = "~/.config/hypr/hyprland.conf"
 "desktop/waybar" = "~/.config/waybar"
 
-[desktop.variables]
-desktop_packages = ["alacritty", "hyrland", "firefox", "brightnessctl", "waybar", "tree-sitter-cli"]
-
 ###############################################################################
 # System
 ###############################################################################
 [system.files]
-"system/install.sh" = { target = "./.install/system", type = "template" }
+"system/install.sh" = "./.install/system"
 "system/pacman" = { target = "/etc/pacman.conf", type = "template", owner = "root" }
 "system/makepkg" = { target = "/etc/makepkg.conf", type = "template", owner = "root" }
 "system/paru" = { target = "/etc/paru.conf", type = "template", owner = "root" }
 "system/ssh/20-base_client_hardening" = { target = "/etc/ssh/ssh_config.d/20-base_client_hardening.conf", type = "template", owner = "root" }
 "system/ssh/20-base_server_hardening" = { target = "/etc/ssh/sshd_config.d/20-base_server_hardening.conf", type = "template", owner = "root" }
 
-[system.variables]
-system_packages = ["openssh"]
-
 ###############################################################################
 # Secure Boot
 ###############################################################################
 [secureboot.files]
 "setup/secure-boot/80-secureboot.hook" = { target = "/etc/pacman.d/hooks/80-secureboot.hook", type = "template", owner = "root" }
-
-[secureboot.variables]
-secureboot_packages = ["sbctl"]

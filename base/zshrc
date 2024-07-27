@@ -1,43 +1,4 @@
-#
-# Enviroment variables
-#
-path+=($HOME/.local/bin)
-path+=($HOME/.config/cargo/bin)
-export path
-
-export BROWSER=firefox
-export TERMINAL=alacritty
-export EDITOR=nvim
-export VISUAL=nvim
-export COLORTERM=truecolor
-
-# XDG
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
-
-# Ansible
-export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
-
-# Rust/Cargo
-export CARGO_HOME=$XDG_CONFIG_HOME/cargo
-export CARGO_TARGET_DIR=$XDG_CONFIG_HOME/cargo/target
-export CARGO_INSTALL_ROOT=$XDG_CONFIG_HOME/cargo
-
-# libreoffice
-export SAL_USE_VCLPLUGIN=gtk4
-
-# qt/gtk
-export QT_QPA_PLATFORMTHEME=qt6ct
-# export QT_STYLE_OVERRIDE=Breeze-Dark
-# nwg-look, breeze-gtk
-export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
-# export QT_STYLE_OVERRIDE=Adwaita-Dark
-
-export HISTFILE=$XDG_CACHE_HOME/zsh/history
-export HISTSIZE=5000
-export SAVEHIST=1000
+source $HOME/.config/env_vars
 
 autoload -U compinit; compinit
 
@@ -51,6 +12,8 @@ alias cat="command bat ${bat_options:+${bat_options[*]}}"
 alias cal="command task calendar ${cal_options:+${cal_options[*]}}"
 
 alias glow="command glow -l ${glow_options:+${glow_options[*]}}"
+
+alias paru="command paru --assume-installed cargo ${glow_options:+${glow_options[*]}}"
 
 # Pacman candy
 alias pac-install="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"

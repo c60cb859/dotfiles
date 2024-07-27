@@ -1,0 +1,37 @@
+export PATH=$PATH:$HOME/.local/bin:
+export PATH=$PATH:$HOME/.config/cargo/bin
+
+export BROWSER=firefox
+export TERMINAL=alacritty
+export EDITOR=nvim
+export VISUAL=nvim
+export COLORTERM=truecolor
+
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# Ansible
+export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
+# npm
+export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm
+# libreoffice
+export SAL_USE_VCLPLUGIN=gtk4
+
+# Rust/Cargo
+export {{ rust.rustup_home }}
+export {{ rust.cargo_home }}
+export {{ rust.cargo_target_dir }}
+export {{ rust.cargo_install_root }}
+
+export QT_QPA_PLATFORMTHEME=qt6ct
+export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
+
+export ZSH_COMPDUMP="$XDG_CONFIG_HOME/zsh/.zcompdump"
+export ZSH_COMPCACHE="$XDG_CONFIG_HOME/zsh/.zcompcache"
+
+export HISTFILE=$XDG_CACHE_HOME/shell/history
+export HISTSIZE=5000
+export SAVEHIST=1000

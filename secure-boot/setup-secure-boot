@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo -e "${GREEN}>>> Installing packages${NC}"
-sudo pacman -S --noconfirm --needed sbctl efitools
+sudo pacman -S --needed sbctl efitools
 
 echo -e "${GREEN}>>> Backup current variables${NC}"
 for var in PK KEK db dbx ; do

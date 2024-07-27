@@ -3,10 +3,11 @@
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+source "$HOME"/.config/env_vars
+sudo pacman -Syu
+
 # Directory containing the scripts
 scripts_dir="./.install"
-
-sudo pacman -Syu
 
 # Iterate over each file in the directory
 for script in "$scripts_dir"/*; do

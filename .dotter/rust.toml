@@ -1,0 +1,6 @@
+[rust.variables.rust]
+rustup_home = "RUSTUP_HOME=$HOME/.config/rustup"
+cargo_home = "CARGO_HOME=$HOME/.config/cargo"
+cargo_target_dir = "CARGO_TARGET_DIR=$HOME/.config/cargo/target"
+cargo_install_root = "CARGO_INSTALL_ROOT=$HOME/.config/cargo"
+

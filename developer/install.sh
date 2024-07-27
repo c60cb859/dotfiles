@@ -1,16 +1,19 @@
 #!/bin/bash
 
-PACKAGES_JSON='{{ developer_packages }}'
-
-PACKAGES=${PACKAGES_JSON:1:-1}
-PACKAGES=${PACKAGES//,/}
-packages_array=($PACKAGES)
-
 # Install the packages using pacman
-sudo pacman -S --needed "${packages_array[@]}"
+sudo pacman -S --needed \
+  tig \
+  git \
+  neovim \
+  powerline-fonts \
+  unzip \
+  npm \
+  python \
+  tree-sitter-cli
 
-
-# Rust dev env
+###############################################################################
+# Rust development environment
+###############################################################################
 sudo pacman -S --needed \
   sccache \
   lld \
@@ -20,9 +23,9 @@ sudo pacman -S --needed \
 if command -v rustc >/dev/null 2>&1; then
   rustc --version
 else
-  export CARGO_HOME=~/.config/cargo
-  export CARGO_TARGET_DIR=~/.config/cargo/target
-  export CARGO_INSTALL_ROOT=~/.config/cargo/install
+  export {{ rust.cargo_home }}
+  export {{ rust.cargo_target_dir }}
+  export {{ rust.cargo_install_root }}
 
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   rustup component add rust-analyzer

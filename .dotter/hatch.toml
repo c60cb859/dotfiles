@@ -1,4 +1,7 @@
-includes = ["./.dotter/graphics.toml"]
+includes = [
+  "./.dotter/graphics.toml",
+  "./.dotter/rust.toml"
+ ]
 
 packages = [
   "base",

@@ -1,13 +1,8 @@
 #!/bin/bash
 
-PACKAGES_JSON='{{ system_packages }}'
-
-PACKAGES=${PACKAGES_JSON:1:-1}
-PACKAGES=${PACKAGES//,/}
-packages_array=($PACKAGES)
-
 # Install the packages using pacman
-sudo pacman -S --needed "${packages_array[@]}"
+sudo pacman -S --needed \
+  openssh
 
 #
 # Paru for Aur
@@ -34,8 +29,19 @@ cargo install dotter
 # OpenSSH
 #
 #Create ssh-user group
-sudo groupadd ssh-user
-sudo usermod -aG ssh-user "$USER"
+GROUPS=("ssh-user")
+
+for GROUP in "${GROUPS[@]}"; do
+    # Check if the user is already in the group
+    if id -nG "$USER" | grep -qw "$GROUP"; then
+        echo "$USER is already a member of $GROUP"
+    else
+        # Add the user to the group
+        sudo groupadd ssh-user
+        sudo usermod -aG "$GROUP" "$USER"
+        echo "Added $USER to $GROUP"
+    fi
+done
 
 # Generate fingerprint
 sudo rm /etc/ssh/ssh_host_*key*
