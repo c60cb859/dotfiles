@@ -186,7 +186,7 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod SHIFT, C, killactive,
 bind = $mainMod ALT SHIFT, Q, exit,
-bind = $mainMod CTRL, space togglefloating,
+bind = $mainMod CTRL, space, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
@@ -226,8 +226,8 @@ bind = $mainMod, S, togglespecialworkspace, magic
 bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
 # Scroll through existing workspaces with mainMod + scroll
-bind = $mainMod, mouse_down, workspace, e+1
-bind = $mainMod, mouse_up, workspace, e-1
+bind = $mainMod, dot, workspace, e+1
+bind = $mainMod, comma, workspace, e-1
 
 # Move/resize windows with mainMod + LMB/RMB and dragging
 bindm = $mainMod, mouse:272, movewindow
