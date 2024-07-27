@@ -7,7 +7,7 @@ sudo pacman -S -q --needed \
 echo -e "[O] Create ssh-user group"
 sudo groupadd ssh-user
 sudo usermod -aG \
-  ssh-user
+  ssh-user \
   "$USER"
 
 echo -e "[O] Generate fingerprint"
