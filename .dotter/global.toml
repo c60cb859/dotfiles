@@ -1,3 +1,6 @@
+###############################################################################
+# Base
+###############################################################################
 [base]
 depends = ["graphics"]
 
@@ -11,6 +14,9 @@ depends = ["graphics"]
 [base.variables]
 base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep", "ttf-hack-nerd"]
 
+###############################################################################
+# Developer
+###############################################################################
 [developer.files]
 "developer/install.sh" = { target = "./.install/developer", type = "template" }
 "developer/tig" = "~/.config/tig/config"
@@ -21,6 +27,9 @@ base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep", "t
 [developer.variables]
 developer_packages = ["tig", "git", "neovim", "powerline-fonts"]
 
+###############################################################################
+# Desktop
+###############################################################################
 [desktop]
 depends = ["graphics"]
 
@@ -34,8 +43,11 @@ depends = ["graphics"]
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
 [desktop.variables]
-desktop_packages = ["alacritty"]
+desktop_packages = ["alacritty", "hyrland"]
 
+###############################################################################
+# System
+###############################################################################
 [system.files]
 "system/install.sh" = { target = "./.install/system", type = "template" }
 "system/pacman" = { target = "/etc/pacman.conf", type = "template", owner = "root" }
@@ -47,6 +59,9 @@ desktop_packages = ["alacritty"]
 [system.variables]
 system_packages = ["openssh"]
 
+###############################################################################
+# Secure Boot
+###############################################################################
 [secureboot.files]
 "setup/secure-boot/80-secureboot.hook" = { target = "/etc/pacman.d/hooks/80-secureboot.hook", type = "template", owner = "root" }
 

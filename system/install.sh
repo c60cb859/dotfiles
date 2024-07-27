@@ -12,23 +12,23 @@ sudo pacman -S --needed "${packages_array[@]}"
 #
 # Paru for Aur
 #
+PATH=$PATH:~/.config/cargo/bin
 if command -v paru >/dev/null 2>&1; then
   paru --version
 else
-  sudo pacman -S --needed base-devel
+  sudo pacman -S --nocheck --needed base-devel
 
   cd /tmp || exit
   git clone https://aur.archlinux.org/paru.git
 
   cd paru || exit
-  PATH=$PATH:~/.config/cargo/bin
 
   makepkg -sid
   rm -rf /tmp/paru
   sudo pacman -R --noconfirm paru-debug
 fi
 
-paru -S --noconfirm --needed \
+paru -S --needed \
   dotter-rs-git
 
 #
