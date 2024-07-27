@@ -1,11 +1,28 @@
 #!/bin/bash
 
 echo -e "[O] Install desktop packages"
+# Recommended fonts
+sudo pacman -S --needed \
+  noto-fonts \
+  noto-fonts-cjk \
+  noto-fonts-emoji \
+  noto-fonts-extra
+
+# Optional but highly recommended fonts
+sudo pacman -S --needed \
+  ttf-liberation \
+  ttf-dejavu \
+  ttf-roboto
+
+sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
+sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+sudo fc-cache -fv
+
 sudo pacman -S --needed \
   alacritty \
   hyprland \
   firefox \
-  noto-fonts \
   brightnessctl \
   waybar
 

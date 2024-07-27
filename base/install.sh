@@ -2,6 +2,7 @@
 
 echo -e "[O] Install basic packages"
 sudo pacman -S -q --needed \
+  less \
   bat \
   zsh \
   grml-zsh-config \

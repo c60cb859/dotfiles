@@ -43,6 +43,8 @@ depends = ["graphics"]
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 "desktop/hyprland" = "~/.config/hypr/hyprland.conf"
 "desktop/waybar" = "~/.config/waybar"
+"desktop/fonts.conf" = "~/.config/fontconfig/fonts.conf"
+"desktop/freetype2.sh" = { target = "/etc/profile.d/freetype2.sh", type = "template", owner = "root" }
 
 ###############################################################################
 # System
