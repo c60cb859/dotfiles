@@ -5,25 +5,6 @@ sudo pacman -S --needed \
   openssh
 
 #
-# Paru for Aur
-#
-PATH=$PATH:~/.config/cargo/bin
-if command -v paru >/dev/null 2>&1; then
-  paru --version
-else
-  sudo pacman -S --nocheck --needed base-devel
-
-  cd /tmp || exit
-  git clone https://aur.archlinux.org/paru.git
-
-  cd paru || exit
-
-  makepkg -sid
-  rm -rf /tmp/paru
-  sudo pacman -R --noconfirm paru-debug
-fi
-
-#
 # OpenSSH
 #
 #Create ssh-user group
