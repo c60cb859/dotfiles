@@ -29,8 +29,8 @@ export {{ rust.cargo_install_root }}
 export QT_QPA_PLATFORMTHEME=qt6ct
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
 
-export ZSH_COMPDUMP="$XDG_CONFIG_HOME/zsh/.zcompdump"
-export ZSH_COMPCACHE="$XDG_CONFIG_HOME/zsh/.zcompcache"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
+export ZSH_COMPCACHE="$XDG_CACHE_HOME/zsh/.zcompcache"
 
 export HISTFILE=$XDG_CACHE_HOME/shell/history
 export HISTSIZE=5000

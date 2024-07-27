@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install the packages using pacman
+echo -e "[O] Install desktop packages"
 sudo pacman -S --needed \
   alacritty \
   hyprland \
@@ -9,6 +9,7 @@ sudo pacman -S --needed \
   brightnessctl \
   waybar
 
+echo -e "[O] Install desktop AUR packages"
 paru --assume-installed cargo \
   -S --needed --noconfirm \
   adwaita-dark \
@@ -17,34 +18,26 @@ paru --assume-installed cargo \
   anyrun-git
 
 
-GROUPS=("video" "seat")
-
-for GROUP in "${GROUPS[@]}"; do
-    # Check if the user is already in the group
-    if id -nG "$USER" | grep -qw "$GROUP"; then
-        echo "$USER is already a member of $GROUP"
-    else
-        # Add the user to the group
-        sudo usermod -aG "$GROUP" "$USER"
-        echo "Added $USER to $GROUP"
-    fi
-done
+echo -e "[O] Add user to groups"
+sudo usermod -aG \
+  video,seat \
+  "$USER"
 
 SERVICE="seatd"
 
 if systemctl is-enabled --quiet "$SERVICE"; then
-    echo "$SERVICE is already enabled"
+    echo "[0] $SERVICE is already enabled"
 else
     # Enable the service
     sudo systemctl enable "$SERVICE"
-    echo "Enabled $SERVICE"
+    echo "[0] Enabled $SERVICE"
 fi
 
 # Check if the service is active (running)
 if systemctl is-active --quiet "$SERVICE"; then
-    echo "$SERVICE is already running"
+    echo "[0] $SERVICE is already running"
 else
     # Start the service
     sudo systemctl start "$SERVICE"
-    echo "Started $SERVICE"
+    echo "[0] Started $SERVICE"
 fi
