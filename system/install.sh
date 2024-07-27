@@ -28,8 +28,7 @@ else
   sudo pacman -R --noconfirm paru-debug
 fi
 
-paru -S --needed \
-  dotter-rs-git
+cargo install dotter
 
 #
 # OpenSSH

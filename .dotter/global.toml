@@ -25,7 +25,7 @@ base_packages = ["bat", "zsh", "grml-zsh-config", "zellij", "fzf", "ripgrep", "t
 "developer/nvim" = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
 [developer.variables]
-developer_packages = ["tig", "git", "neovim", "powerline-fonts"]
+developer_packages = ["tig", "git", "neovim", "powerline-fonts", "unzip", "npm", "python"]
 
 ###############################################################################
 # Desktop
@@ -41,9 +41,11 @@ depends = ["graphics"]
 "desktop/qt5ct" = "~/.config/qt5ct/qt5ct.conf"
 "desktop/xsettingsd" = "~/.config/xsettingsd/xsettingsd.conf"
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+"desktop/hyprland" = "~/.config/hypr/hyprland.conf"
+"desktop/waybar" = "~/.config/waybar"
 
 [desktop.variables]
-desktop_packages = ["alacritty", "hyrland"]
+desktop_packages = ["alacritty", "hyrland", "firefox", "brightnessctl", "waybar", "tree-sitter-cli"]
 
 ###############################################################################
 # System

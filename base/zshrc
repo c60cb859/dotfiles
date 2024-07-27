@@ -23,7 +23,7 @@ export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
 # Rust/Cargo
 export CARGO_HOME=$XDG_CONFIG_HOME/cargo
 export CARGO_TARGET_DIR=$XDG_CONFIG_HOME/cargo/target
-export CARGO_INSTALL_ROOT=$XDG_CONFIG_HOME/cargo/install
+export CARGO_INSTALL_ROOT=$XDG_CONFIG_HOME/cargo
 
 # libreoffice
 export SAL_USE_VCLPLUGIN=gtk4
@@ -57,7 +57,7 @@ alias pac-install="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs 
 alias pac-remove="pacman -Qqe | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 alias pac-info="pacman -Qq | fzf --multi --preview 'bat <(pacman -Qi {1}) <(pacman -Fl {1} | awk \"{print \$2}\")'"
 
-alias aur-install="paru -Slq --aur | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
+alias aur-install="paru -Slq --aur | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru --assume-installed cargo -S"
 
 #
 # Misc

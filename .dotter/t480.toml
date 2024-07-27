@@ -1,0 +1,13 @@
+includes = ["./.dotter/graphics.toml"]
+
+packages = [
+  "base",
+  "developer",
+  "system",
+  "desktop",
+]
+
+[variables]
+font_size = 10
+font_family = "Hack Nerd Font"
+cpu_cores = 8

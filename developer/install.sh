@@ -11,7 +11,7 @@ sudo pacman -S --needed "${packages_array[@]}"
 
 
 # Rust dev env
-sudo pacman -S --noconfirm --needed \
+sudo pacman -S --needed \
   sccache \
   lld \
   clang
