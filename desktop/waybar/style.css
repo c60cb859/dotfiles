@@ -1,6 +1,7 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "{{ font_family }} Regular";
+  /* `otf-font-awesome` is requi#{{ colors.red }} to be installed for icons */
+  /* font-family: "{{ font_family }} Regular"; */
+  font-family: "Noto Sans CJK KR Regular";
   font-size: 13px;
   min-height: 0;
 }
@@ -9,7 +10,7 @@ window#waybar {
   background: transparent;
   /*    background-color: rgba(43, 48, 59, 0.5); */
   /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #ffffff;
+  color: #{{ colors.white }};
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -59,17 +60,17 @@ button:hover {
 #workspaces button.focused {
   /*    box-shadow: inset 0 -2px #c9545d; */
   background-color: rgba(0,0,0,0.3);
-  color:#c9545d;
-  border-top: 2px solid #c9545d;
+  color:#{{ colors.red }};
+  border-top: 2px solid #{{ colors.red }};
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: #{{ colors.red }};
 }
 
 #mode {
-  background-color: #64727D;
-  border-bottom: 3px solid #ffffff;
+  background-color: #{{ colors.grey }};
+  border-bottom: 3px solid #{{ colors.white }};
 }
 
 #clock,
@@ -92,7 +93,7 @@ button:hover {
   padding-left: 4px;
   padding-right: 4px;
   background-color: rgba(0,0,0,0.3);
-  color: #ffffff;
+  color: #{{ colors.white }};
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -106,29 +107,29 @@ button:hover {
 }
 
 #clock {
-  font-size:14px;
-  font-weight: bold;
+  /* font-size:14px; */
+  /* font-weight: bold; */
 }
 
 #battery icon {
-  color: red;
+  color: #{{ colors.red }};
 }
 
 #battery.charging, #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  color: #{{ colors.white }};
+  background-color: #{{ colors.green }};
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #{{ colors.white }};
+    color: #{{ colors.black }};
   }
 }
 
 #battery.warning:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  background-color: #{{ colors.red }};
+  color: #{{ colors.white }};
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -137,8 +138,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  background-color: #{{ colors.red }};
+  color: #{{ colors.white }};
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -147,15 +148,15 @@ button:hover {
 }
 
 label:focus {
-  background-color: #000000;
+  background-color: #{{ colors.black }};
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: #{{ colors.red }};
 }
 
 #temperature.critical {
-  background-color: #eb4d4b;
+  background-color: #{{ colors.red }};
 }
 
 #tray > .passive {
@@ -164,21 +165,5 @@ label:focus {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  background-color: #{{ colors.red }};
 }
-
-/*
-
-window#waybar.solo {
-background-color: #FFFFFF;
-}
-
-window#waybar.termite {
-background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-background-color: #000000;
-border: none;
-}
- */

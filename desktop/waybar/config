@@ -8,7 +8,7 @@
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     "modules-center": ["hyprland/window"],
     //"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"],
-    "modules-right": ["mpd", "idle_inhibitor", "temperature", "cpu", "memory","network", "pulseaudio", "backlight", "keyboard-state", "battery", "battery#bat2", "tray", "clock"],
+    "modules-right": ["temperature", "cpu", "memory","network", "pulseaudio", "backlight", "battery", "battery#bat2", "tray", "clock"],
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -82,11 +82,11 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        // "timezone": "Europe/Copenhagen",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"format-alt": "{:%Y-%m-%d}"
-        "format": "{:L%Y-%m-%d<small>[%a]</small> <tt><small>%p</small></tt>%I:%M}"
-        //"format": "{:%Y-%m-%d %H:%M}"
+        //"format": "{:L%Y-%m-%d[%a] <tt>%p</tt>%I:%M}"
+        "format": "{:%d-%m | %H:%M}"
     },
     "cpu": {
         "format": "  {usage}%",
@@ -109,21 +109,30 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
+        "bat": "BAT1",
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-alt": "{icon}  {time}",
         "format-icons": ["  ", "  ", "  ", "  ", "  "]
     },
     "battery#bat2": {
-        "bat": "BAT2"
+        "bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-icons": ["  ", "  ", "  ", "  ", "  "]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
