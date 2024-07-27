@@ -23,8 +23,6 @@ else
   sudo pacman -R --noconfirm paru-debug
 fi
 
-cargo install dotter
-
 #
 # OpenSSH
 #

@@ -3,17 +3,18 @@
 # Install the packages using pacman
 sudo pacman -S --needed \
   alacritty \
-  hyrland \
+  hyprland \
   firefox \
+  noto-fonts \
   brightnessctl \
   waybar
 
 paru --assume-installed cargo \
-  -S --needed \
+  -S --needed --noconfirm \
   adwaita-dark \
   adwaita-qt5 \
   adwaita-qt6 \
-  anyrun
+  anyrun-git
 
 
 GROUPS=("video" "seat")
