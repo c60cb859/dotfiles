@@ -189,7 +189,7 @@ bind = $mainMod ALT SHIFT, Q, exit,
 bind = $mainMod CTRL, space, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # dwindle
+# bind = $mainMod, J, togglesplit, # dwindle
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, h, movefocus, l
@@ -226,7 +226,7 @@ bind = $mainMod, S, togglespecialworkspace, magic
 bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
 # Scroll through existing workspaces with mainMod + scroll
-bind = $mainMod, dot, workspace, e+1
+bind = $mainMod, period, workspace, e+1
 bind = $mainMod, comma, workspace, e-1
 
 # Move/resize windows with mainMod + LMB/RMB and dragging
