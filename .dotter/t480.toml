@@ -8,9 +8,11 @@ packages = [
   "developer",
   "system",
   "desktop",
+  "hyprland",
 ]
 
 [variables]
 font_size = 10
-font_family = "Hack Nerd Font"
-cpu_cores = 8
+font_family = "Noto"
+font_mono = "Hack Nerd Font"
+cpu_cores = 4

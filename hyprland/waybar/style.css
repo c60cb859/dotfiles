@@ -116,20 +116,20 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-  color: #{{ colors.white }};
+  color: #{{ colors.black }};
   background-color: #{{ colors.green }};
 }
 
 @keyframes blink {
   to {
-    background-color: #{{ colors.white }};
+    background-color: #{{ colors.black }};
     color: #{{ colors.black }};
   }
 }
 
 #battery.warning:not(.charging) {
   background-color: #{{ colors.red }};
-  color: #{{ colors.white }};
+  color: #{{ colors.black }};
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -139,7 +139,7 @@ button:hover {
 
 #battery.critical:not(.charging) {
   background-color: #{{ colors.red }};
-  color: #{{ colors.white }};
+  color: #{{ colors.black }};
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;

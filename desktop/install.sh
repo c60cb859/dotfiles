@@ -1,32 +1,33 @@
 #!/bin/bash
 
-echo -e "[O] Install desktop packages"
+LOG_FILE=install.log
+
+echo -e "[O] Install fonts"
 # Recommended fonts
 sudo pacman -S --needed \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
-  noto-fonts-extra
+  noto-fonts-extra \
+  &>> "$LOG_FILE"
 
 # Optional but highly recommended fonts
 sudo pacman -S --needed \
   ttf-liberation \
   ttf-dejavu \
-  ttf-roboto
+  ttf-roboto \
+  &>> "$LOG_FILE"
 
-paru -S --needed tty-symbola
 
-sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
-sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-sudo fc-cache -fv
+paru -S --needed ttf-symbola &>> "$LOG_FILE"
 
+sudo fc-cache -fv &>> "$LOG_FILE"
+
+echo -e "[O] Install desktop packages"
 sudo pacman -S --needed \
   alacritty \
-  hyprland \
   firefox \
-  brightnessctl \
-  waybar
+  &>> "$LOG_FILE"
 
 echo -e "[O] Install desktop AUR packages"
 paru --assume-installed cargo \
@@ -34,29 +35,4 @@ paru --assume-installed cargo \
   adwaita-dark \
   adwaita-qt5 \
   adwaita-qt6 \
-  anyrun-git
-
-
-echo -e "[O] Add user to groups"
-sudo usermod -aG \
-  video,seat \
-  "$USER"
-
-SERVICE="seatd"
-
-if systemctl is-enabled --quiet "$SERVICE"; then
-    echo "[0] $SERVICE is already enabled"
-else
-    # Enable the service
-    sudo systemctl enable "$SERVICE"
-    echo "[0] Enabled $SERVICE"
-fi
-
-# Check if the service is active (running)
-if systemctl is-active --quiet "$SERVICE"; then
-    echo "[0] $SERVICE is already running"
-else
-    # Start the service
-    sudo systemctl start "$SERVICE"
-    echo "[0] Started $SERVICE"
-fi
+  &>> "$LOG_FILE"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LOG_FILE=install.log
+
 echo -e "[O] Install developer packages"
 sudo pacman -S --needed \
   tig \
@@ -9,7 +11,8 @@ sudo pacman -S --needed \
   unzip \
   npm \
   python \
-  tree-sitter-cli
+  tree-sitter-cli \
+  &>> "$LOG_FILE"
 
 ###############################################################################
 # Rust development environment
@@ -18,7 +21,8 @@ echo -e "[O] Set up Rust development environment"
 sudo pacman -S --needed \
   sccache \
   lld \
-  clang
+  clang \
+  &>> "$LOG_FILE"
 
 
 if command -v rustc >/dev/null 2>&1; then
@@ -36,7 +40,7 @@ else
 fi
 
 echo -e "[O] Install Dotter"
-cargo install dotter
+cargo install dotter &>> "$LOG_FILE"
 
 #
 # Paru for Aur
@@ -46,14 +50,14 @@ PATH=$PATH:~/.config/cargo/bin
 if command -v paru >/dev/null 2>&1; then
   paru --version
 else
-  sudo pacman -S --needed base-devel
+  sudo pacman -S --needed base-devel &>> "$LOG_FILE"
 
   cd /tmp || exit
-  git clone https://aur.archlinux.org/paru.git
+  git clone https://aur.archlinux.org/paru.git &>> "$LOG_FILE"
 
   cd paru || exit
 
-  makepkg -sid
-  rm -rf /tmp/paru
-  sudo pacman -R --noconfirm paru-debug
+  makepkg -sid &>> "$LOG_FILE"
+  rm -rf /tmp/paru &>> "$LOG_FILE"
+  sudo pacman -R --noconfirm paru-debug &>> "$LOG_FILE"
 fi

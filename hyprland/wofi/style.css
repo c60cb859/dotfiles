@@ -1,0 +1,53 @@
+window {
+  margin: 0px;
+  background-color: rgba(0,0,0,0);
+}
+
+#input {
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #{{ colors.blue }};
+  border-color: #{{ colors.blue }};
+  background-color: rgba(40,44,52,0.8);
+}
+
+#inner-box {
+  margin: 1px;
+  border: 1px solid;
+  border-radius: 5px;
+  backdrop-filter: blur(6px);
+  color: #{{ colors.blue }};
+  border-color: #{{ colors.blue }};
+  background-color: rgba(40,44,52,0.8);
+}
+
+#outer-box {
+  margin: 1px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+#text {
+  margin: 1px;
+  border: none;
+  color: #{{ colors.white }};
+}
+
+#entry.activatable #text {
+  color: #{{ colors.black }};
+}
+
+#entry > * {
+  color: #{{ colors.white }};
+}
+
+#entry:selected {
+  border-radius: 5px;
+  background-color: rgba(97,175,239,0.8);
+}
+
+#entry:selected #text {
+  color: rgba(40,44,52,0.8);
+  font-weight: bold;
+}

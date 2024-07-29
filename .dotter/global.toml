@@ -35,16 +35,36 @@ depends = ["graphics"]
 
 [desktop.files]
 "desktop/install.sh" = "./.install/03_desktop"
-"desktop/gtkrc-2.0" = "~/.config/gtk-2.0/settings.ini"
-"desktop/gtkrc-3.0" = "~/.config/gtk-3.0/settings.ini"
-"desktop/qt6ct" = "~/.config/qt6ct/qt6ct.conf"
-"desktop/qt5ct" = "~/.config/qt5ct/qt5ct.conf"
-"desktop/xsettingsd" = "~/.config/xsettingsd/xsettingsd.conf"
+# Gtk and qt
+"desktop/gtk_qt/gtkrc-2.0" = "~/.config/gtk-2.0/settings.ini"
+"desktop/gtk_qt/gtkrc-3.0" = "~/.config/gtk-3.0/settings.ini"
+"desktop/gtk_qt/qt6ct" = "~/.config/qt6ct/qt6ct.conf"
+"desktop/gtk_qt/qt5ct" = "~/.config/qt5ct/qt5ct.conf"
+"desktop/gtk_qt/xsettingsd" = "~/.config/xsettingsd/xsettingsd.conf"
+# alacritty
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
-"desktop/hyprland" = "~/.config/hypr/hyprland.conf"
-"desktop/waybar" = "~/.config/waybar"
-"desktop/fonts.conf" = "~/.config/fontconfig/fonts.conf"
-"desktop/freetype2.sh" = { target = "/etc/profile.d/freetype2.sh", type = "template", owner = "root" }
+# Fonts
+"desktop/fonts/fonts.conf" = "~/.config/fontconfig/fonts.conf"
+"desktop/fonts/freetype2.sh" = { target = "/etc/profile.d/freetype2.sh", type = "template", owner = "root" }
+# Firefox
+"desktop/firefox/autoconfig.js" = { target = "/usr/lib/firefox/defaults/pref/autoconfig.js", type = "template", owner = "root" }
+"desktop/firefox/mozilla.cfg" = { target = "/usr/lib/firefox/mozilla.cfg", type = "template", owner = "root" }
+"desktop/firefox/policies.json" = { target = "/etc/firefox/policies/policies.json", type = "template", owner = "root" }
+
+###############################################################################
+# Hyprland
+###############################################################################
+[hyprland]
+depends = ["graphics"]
+
+[hyprland.files]
+"hyprland/install.sh" = "./.install/04_hyprland"
+"hyprland/hyprland" = "~/.config/hypr/hyprland.conf"
+"hyprland/hypridle" = "~/.config/hypr/hypridle.conf"
+"hyprland/hyprlock" = "~/.config/hypr/hyprlock.conf"
+"hyprland/hyprpaper" = "~/.config/hypr/hyprpaper.conf"
+"hyprland/waybar" = "~/.config/waybar"
+"hyprland/wofi" = "~/.config/wofi"
 
 ###############################################################################
 # System

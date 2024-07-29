@@ -1,0 +1,70 @@
+width=40%
+#columns=COLUMNS
+
+height=50%
+#lines=2
+
+prompt=>>
+
+#xoffset=0
+#yoffset=0
+location=2
+orientation=vertical
+
+term=alacritty
+hide_scroll=true
+matching=fuzzy
+
+halign=fill
+content_halign=fill
+
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_left=Ctrl-h
+key_right=Ctrl-l
+key_forward=Ctrl-n
+key_backward=Ctrl-p
+key_submit=Return
+key_exit=Ctrl-c
+key_pgup=Ctrl-u
+key_pgdn=Ctrl-d
+
+##window
+#      The name of the window itself.
+#
+##outer-box
+#      The name of the box that contains everything.
+#
+##input
+#      The name of the search bar.
+#
+##scroll
+#      The name of the scrolled window containing all of the entries.
+#
+##inner-box
+#      The name of the box containing all of the entries.
+#
+##img
+#      The name of all images in entries displayed in image mode.
+#
+##text
+#      The name of all the text in entries.
+#
+##unselected
+#      The name of all entries currently unselected. A better way of do‐
+#      ing this is to do #entry and combine that with #entry:selected
+#
+##selected
+#      The name of all entries currently selected. A better way of doing
+#      this is to do #entry:selected
+#
+#.entry
+#      The class attached to all entries. This is attached to the inside
+#      property box and is old, you probably want #entry instead
+#
+##entry
+#      The name of all entries.
+#
+##expander-box
+#      The  name of all boxes shown when expanding entries with multiple
+#      actions

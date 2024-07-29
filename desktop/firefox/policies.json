@@ -1,0 +1,70 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisablePasswordReveal": true,
+    "DisablePocket": true,
+    "DisableSetDesktopBackground": true,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": "never",
+    "DisplayMenuBar": "default-off",
+    "EnableTrackingProtection": {
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "Value": true
+    },
+    "ExtensionSettings": {
+      "jid1-MnnxcxisBPnSXQ@jetpack": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4321653/privacy_badger17-2024.7.17.xpi",
+        "installation_mode": "force_installed",
+        "updates_disabled": false
+      },
+      "uBlock0@raymondhill.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4290466/ublock_origin-1.58.0.xpi",
+        "installation_mode": "force_installed",
+        "updates_disabled": false
+      }
+    },
+    "ExtensionUpdate": true,
+    "Homepage": {
+      "Locked": true,
+      "StartPage": "previous-session"
+    },
+    "NoDefaultBookmarks": true,
+    "OfferToSaveLogins": false,
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "PopupBlocking": {
+      "Default": true
+    },
+    "Preferences": {
+      "browser.search.update": false,
+      "browser.urlbar.placeholderName": {
+        "Status": "locked",
+        "Type": "string",
+        "Value": "DuckDuckGo"
+      },
+      "browser.urlbar.placeholderName.private": {
+        "Status": "locked",
+        "Type": "string",
+        "Value": "DuckDuckGo"
+      },
+      "extensions.getAddons.showPane": false,
+      "ui.key.menuAccessKeyFocuses": true
+    },
+    "PrimaryPassword": true,
+    "PromptForDownloadLocation": true,
+    "SearchBar": "unified",
+    "SearchEngines": {
+      "Default": "DuckDuckGo",
+      "Remove": [
+        "Google",
+        "Amazon.com",
+        "Bing",
+        "ebay"
+      ]
+    },
+    "ShowHomeButton": false
+  }
+}
