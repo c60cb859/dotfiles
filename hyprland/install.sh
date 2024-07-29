@@ -1,7 +1,5 @@
 #!/bin/bash
 
-LOG_FILE=install.log
-
 echo -e "[O] Install Hyprland packages"
 sudo pacman -S --needed --noconfirm \
   hyprland \
@@ -11,14 +9,12 @@ sudo pacman -S --needed --noconfirm \
   wofi \
   cliphist \
   waybar \
-  slurp \
-  &>> "$LOG_FILE"
+  slurp
 
 echo -e "[O] Add user to groups"
 sudo usermod -aG \
   video,seat \
-  "$USER" \
-  &>> "$LOG_FILE"
+  "$USER"
 
 SERVICE="seatd"
 
@@ -26,7 +22,7 @@ if systemctl is-enabled --quiet "$SERVICE"; then
     echo "[O] $SERVICE is already enabled"
 else
     # Enable the service
-    sudo systemctl enable "$SERVICE" &>> "$LOG_FILE"
+    sudo systemctl enable "$SERVICE"
     echo "[O] Enabled $SERVICE"
 fi
 
@@ -35,6 +31,6 @@ if systemctl is-active --quiet "$SERVICE"; then
     echo "[O] $SERVICE is already running"
 else
     # Start the service
-    sudo systemctl start "$SERVICE" &>> "$LOG_FILE"
+    sudo systemctl start "$SERVICE"
     echo "[O] Started $SERVICE"
 fi

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-LOG_FILE=install.log
-
 echo -e "[O] Install basic packages"
 sudo pacman -S -q --needed --noconfirm \
   less \
@@ -11,13 +9,12 @@ sudo pacman -S -q --needed --noconfirm \
   zellij \
   fzf \
   ripgrep \
-  ttf-hack-nerd \
-  &>> "$LOG_FILE"
+  ttf-hack-nerd
 
 echo -e "[O] Create filer and directories"
-touch ~/.zshrc &>> "$LOG_FILE"
-mkdir ~/.cache/zsh &>> "$LOG_FILE"
-mkdir ~/.cache/shell &> "$LOG_FILE"
+touch ~/.zshrc
+mkdir ~/.cache/zsh
+mkdir ~/.cache/shell
 
 # Get the name of the shell
 shell=/bin/zsh
