@@ -22,6 +22,6 @@ shell=/bin/zsh
 # Perform actions based on the current shell
 if [[ "$shell" != "$SHELL" ]]; then
   echo -e "[O] Set shell to $shell"
-  chsh -s /bin/zsh
-  sudo chsh -s /bin/zsh
+  chsh -s "$shell"
+  sudo chsh -s "$shell"
 fi
