@@ -7,6 +7,7 @@
     "DisablePocket": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
+    "TranslateEnabled": false,
     "DisplayBookmarksToolbar": "never",
     "DisplayMenuBar": "default-off",
     "EnableTrackingProtection": {
@@ -22,6 +23,21 @@
       },
       "uBlock0@raymondhill.net": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/file/4290466/ublock_origin-1.58.0.xpi",
+        "installation_mode": "force_installed",
+        "updates_disabled": false
+      }
+      "addon@darkreader.org": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4317971/darkreader-4.9.88.xpi",
+        "installation_mode": "force_installed",
+        "updates_disabled": false
+      }
+      "{d634138d-c276-4fc8-924b-40a0ea21d284}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4321525/1password_x_password_manager-2.26.1.xpi",
+        "installation_mode": "force_installed",
+        "updates_disabled": false
+      }
+      "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4045009/auto_tab_discard-0.6.7.xpi",
         "installation_mode": "force_installed",
         "updates_disabled": false
       }
@@ -58,12 +74,7 @@
     "SearchBar": "unified",
     "SearchEngines": {
       "Default": "DuckDuckGo",
-      "Remove": [
-        "Google",
-        "Amazon.com",
-        "Bing",
-        "ebay"
-      ]
+      "Remove": ["Google", "Amazon.com", "Bing", "ebay"]
     },
     "ShowHomeButton": false
   }
