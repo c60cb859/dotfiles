@@ -4,7 +4,7 @@ LOG_FILE=install.log
 
 echo -e "[O] Install fonts"
 # Recommended fonts
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
@@ -12,7 +12,7 @@ sudo pacman -S --needed \
   &>> "$LOG_FILE"
 
 # Optional but highly recommended fonts
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   ttf-liberation \
   ttf-dejavu \
   ttf-roboto \
@@ -24,7 +24,7 @@ paru -S --needed ttf-symbola &>> "$LOG_FILE"
 sudo fc-cache -fv &>> "$LOG_FILE"
 
 echo -e "[O] Install desktop packages"
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   alacritty \
   polkit \
   firefox \

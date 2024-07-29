@@ -3,7 +3,7 @@
 LOG_FILE=install.log
 
 echo -e "[O] Install basic packages"
-sudo pacman -S -q --needed \
+sudo pacman -S -q --needed --noconfirm \
   less \
   bat \
   zsh \

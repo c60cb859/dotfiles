@@ -3,7 +3,7 @@
 LOG_FILE=install.log
 
 echo -e "[O] Install Hyprland packages"
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   hyprland \
   hyprlock \
   hypridle \

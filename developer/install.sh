@@ -3,7 +3,7 @@
 LOG_FILE=install.log
 
 echo -e "[O] Install developer packages"
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   tig \
   git \
   neovim \
@@ -18,7 +18,7 @@ sudo pacman -S --needed \
 # Rust development environment
 ###############################################################################
 echo -e "[O] Set up Rust development environment"
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   sccache \
   lld \
   clang \
@@ -50,7 +50,7 @@ PATH=$PATH:~/.config/cargo/bin
 if command -v paru >/dev/null 2>&1; then
   paru --version
 else
-  sudo pacman -S --needed base-devel &>> "$LOG_FILE"
+  sudo pacman -S --needed --noconfirm base-devel &>> "$LOG_FILE"
 
   cd /tmp || exit
   git clone https://aur.archlinux.org/paru.git &>> "$LOG_FILE"

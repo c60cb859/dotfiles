@@ -3,7 +3,7 @@
 LOG_FILE=install.log
 
 echo -e "[O] Install OpenSSH"
-sudo pacman -S -q --needed \
+sudo pacman -S -q --needed --noconfirm \
   openssh \
   &>> "$LOG_FILE"
 
