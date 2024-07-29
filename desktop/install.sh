@@ -26,6 +26,7 @@ sudo fc-cache -fv &>> "$LOG_FILE"
 echo -e "[O] Install desktop packages"
 sudo pacman -S --needed \
   alacritty \
+  polkit \
   firefox \
   &>> "$LOG_FILE"
 
