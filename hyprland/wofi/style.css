@@ -1,6 +1,6 @@
 window {
   margin: 0px;
-  background-color: rgba(0,0,0,0);
+  background-color: {{ hex2rgba colors.black 0 }};
 }
 
 #input {
@@ -9,7 +9,7 @@ window {
   border-radius: 5px;
   color: #{{ colors.blue }};
   border-color: #{{ colors.blue }};
-  background-color: rgba(40,44,52,0.8);
+  background-color: {{ hex2rgba colors.black 0.8 }};
 }
 
 #inner-box {
@@ -19,13 +19,13 @@ window {
   backdrop-filter: blur(6px);
   color: #{{ colors.blue }};
   border-color: #{{ colors.blue }};
-  background-color: rgba(40,44,52,0.8);
+  background-color: {{ hex2rgba colors.black 0.8 }};
 }
 
 #outer-box {
   margin: 1px;
   border: none;
-  background-color: rgba(0,0,0,0);
+  background-color: {{ hex2rgba colors.black 0 }};
 }
 
 #text {
@@ -44,10 +44,10 @@ window {
 
 #entry:selected {
   border-radius: 5px;
-  background-color: rgba(97,175,239,0.8);
+  background-color: {{ hex2rgba colors.blue 0.8 }};
 }
 
 #entry:selected #text {
-  color: rgba(40,44,52,0.8);
+  color: {{ hex2rgba colors.black 0.8 }};
   font-weight: bold;
 }

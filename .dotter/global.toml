@@ -1,3 +1,6 @@
+[helpers]
+hex2rgb = "./.dotter/helpers/color_rgb.rhai"
+hex2rgba = "./.dotter/helpers/color_rgba.rhai"
 ###############################################################################
 # Base
 ###############################################################################
@@ -43,6 +46,8 @@ depends = ["graphics"]
 "desktop/gtk_qt/xsettingsd" = "~/.config/xsettingsd/xsettingsd.conf"
 # alacritty
 "desktop/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+# zathura
+"desktop/zathura" = "~/.config/zathura/zathurarc"
 # Fonts
 "desktop/fonts/fonts.conf" = "~/.config/fontconfig/fonts.conf"
 "desktop/fonts/freetype2.sh" = { target = "/etc/profile.d/freetype2.sh", type = "template", owner = "root" }

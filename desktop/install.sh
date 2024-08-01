@@ -30,4 +30,7 @@ paru --assume-installed cargo \
   -S --needed --noconfirm \
   adwaita-dark \
   adwaita-qt5 \
-  adwaita-qt6
+  adwaita-qt6 \
+  tesseract-data-eng \
+  tesseract-data-dan \
+  zathura-pdf-mupdf

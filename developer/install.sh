@@ -35,6 +35,13 @@ else
   rustup component add rustfmt
 fi
 
+echo -e "[O] Install Rust tools"
+cargo install cargo-audit
+cargo install cargo-deny
+cargo install cargo-udeps
+cargo install cargo-tarpaulin
+cargo install cargo-watch
+
 echo -e "[O] Install Dotter"
 cargo install dotter
 
