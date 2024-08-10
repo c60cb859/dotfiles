@@ -1,31 +1,66 @@
-# format = '''$all$character'''
+# vim: filetype=toml
+
+format = """
+$directory\
+$git_commit$git_branch$git_metrics$git_status\
+$all\
+$cmd_duration$sudo$character
+"""
+
 right_format = '$time'
 
 add_newline = false
 palette = "onedark"
 
 [character]
-success_symbol = '[➜](bold green)'
+success_symbol = '[](bold green)'
 error_symbol = '[✗](bold red) '
+vimcmd_symbol = '[](bold green)'
+vimcmd_replace_one_symbol = '[](bold purple)'
+vimcmd_replace_symbol = '[](bold purple)'
+vimcmd_visual_symbol = '[](bold green)'
 
-[package]
-disabled = true
 
 [directory]
+style = "bold cyan"
 fish_style_pwd_dir_length = 1
 
 [cmd_duration]
-min_time = 500
-format = '[T - $duration]($style)'
+min_time = 100
+format = '[$duration ]($style)'
 show_milliseconds = true
 
 [time]
 disabled = false
 style = 'bold blue'
-format = "[$time]($style) "
+format = '[$date $time]($style)'
 
 [sudo]
 disabled = false
+symbol = '  '
+style = 'bold red'
+format = '[$symbol]($style)'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+only_detached = false
+tag_detached = false
+style = "bold purple"
+commit_hash_length = 5
+format = '[$hash$tag]($style) '
+
+[git_status]
+style = "bold purple"
+format = '([$all_status$ahead_behind 󰊢 ]($style) )'
+
+[git_metrics]
+disabled = false
+
+[lua]
+symbol = ' '
+format = '[$symbol($version )]($style)'
 
 [palettes.onedark]
 color_black = '#{{ colors.black }}'
