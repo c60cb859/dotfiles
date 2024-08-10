@@ -34,3 +34,8 @@ paru --assume-installed cargo \
   tesseract-data-eng \
   tesseract-data-dan \
   zathura-pdf-mupdf
+
+
+# Mail
+
+# sudo pacman -S neomutt isync lynx

@@ -1,0 +1,46 @@
+# format = '''$all$character'''
+right_format = '$time'
+
+add_newline = false
+palette = "onedark"
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red) '
+
+[package]
+disabled = true
+
+[directory]
+fish_style_pwd_dir_length = 1
+
+[cmd_duration]
+min_time = 500
+format = '[T - $duration]($style)'
+show_milliseconds = true
+
+[time]
+disabled = false
+style = 'bold blue'
+format = "[$time]($style) "
+
+[sudo]
+disabled = false
+
+[palettes.onedark]
+color_black = '#{{ colors.black }}'
+color_white = '#{{ colors.white }}'
+color_purple = '#{{ colors.purple }}'
+color_green = '#{{ colors.green }}'
+color_orange = '#{{ colors.orange }}'
+color_blue = '#{{ colors.blue }}'
+color_yellow = '#{{ colors.yellow }}'
+color_cyan = '#{{ colors.cyan }}'
+color_red = '#{{ colors.red }}'
+color_grey = '#{{ colors.grey }}'
+color_light_grey = '#{{ colors.light_grey }}'
+
+color_dark_cyan = '#{{ colors.dark_cyan }}'
+color_dark_red = '#{{ colors.dark_red }}'
+color_dark_yellow = '#{{ colors.dark_yellow }}'
+color_dark_purple = '#{{ colors.dark_purple }}'

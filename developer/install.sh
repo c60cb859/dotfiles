@@ -45,6 +45,9 @@ cargo install cargo-watch
 echo -e "[O] Install Dotter"
 cargo install dotter
 
+echo -e "[O] Install Starship"
+cargo install starship
+
 #
 # Paru for Aur
 #

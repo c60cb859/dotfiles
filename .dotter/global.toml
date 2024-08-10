@@ -13,7 +13,7 @@ depends = ["graphics"]
 "base/env_vars" = "~/.config/env_vars"
 "base/bashrc" = "~/.bashrc"
 "base/bash_profile" = "~/.bash_profile"
-"base/zshrc" = "~/.zshrc.local"
+"base/zshrc" = "~/.zshrc"
 "base/zellij" = "~/.config/zellij"
 "base/bin" = { target = "~/.local/bin", type = "symbolic", recurse = false }
 
@@ -27,6 +27,7 @@ depends = ["rust"]
 "developer/install.sh" = "./.install/02_developer"
 "developer/tig" = "~/.config/tig/config"
 "developer/git" = "~/.config/git/config"
+"developer/starship" = "~/.config/starship.toml"
 "developer/cargo.toml" = "~/.config/cargo/config.toml"
 "developer/nvim" = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 

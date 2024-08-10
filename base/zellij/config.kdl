@@ -33,7 +33,7 @@ keybinds clear-defaults=true {
         // Floating
         bind "Alt s" { ToggleFloatingPanes; }
         // Session
-        bind "Alt q" { Detach; }
+        bind "Alt Q" { Detach; }
 
     }
     resize {

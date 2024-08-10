@@ -5,7 +5,6 @@ sudo pacman -S -q --needed --noconfirm \
   less \
   bat \
   zsh \
-  grml-zsh-config \
   zellij \
   fzf \
   ripgrep \
